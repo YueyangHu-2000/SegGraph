@@ -1,0 +1,18 @@
+{
+  "Airplane": ["Fuselage", "Wing", "Tail", "Engine"],
+  "Bag": ["Handle", "Body"],
+  "Cap": ["Crown", "Brim"],
+  "Car": ["Roof", "Hood", "Wheel", "Body"],
+  "Chair": ["Backrest", "Seat", "Leg", "Armrest"],
+  "Earphone": ["Earpad", "Headband", "Microphone"],
+  "Guitar": ["Head", "Neck", "Body"],
+  "Knife": ["Blade", "Handle"],
+  "Lamp": ["Base", "Bulb","Ceiling-Mount", "Neck"],
+  "Laptop": ["Base", "Lid"],
+  "Motorbike": ["Tank", "Seat", "Wheel", "Handlebar", "Headlight", "Body"],
+  "Mug": ["Handle", "Body"],
+  "Pistol": ["Barrel", "Grip", "Trigger"],
+  "Rocket": ["Body", "Fin", "Nose"],
+  "Skateboard": ["Wheel", "Deck", "Truck"],
+  "Table": ["Top", "Leg", "Side-Panel"]
+}
