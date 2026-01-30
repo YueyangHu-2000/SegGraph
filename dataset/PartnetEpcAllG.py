@@ -522,7 +522,7 @@ class PartnetEpc(Dataset):
         if self.show_figure:
             shape_id_list = ["179"]
         
-        haha_path_list = json.load(open("PartNetE_split_path_lists.json","r"))
+        haha_path_list = json.load(open("./json/PartNetE_split_path_lists.json","r"))
         
         haha_path_list = haha_path_list[self.category]["train" if self.split=="few_shot" else self.split]
         
