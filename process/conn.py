@@ -3,11 +3,40 @@ from os.path import join as ospj
 from dataset.utils import load_label_from_ori
 import torch
 import numpy as np
-from tmp1.tmp5 import connected_components_bfs 
+# from tmp1.tmp5 import connected_components_bfs 
 from tqdm import tqdm
 from src.utils import get_seg_color,get_batchlabel_color
 import cv2
 import h5py
+
+def connected_components_bfs(num_nodes, edges):
+    """
+    主函数：建图并对连通块染色
+    Args:
+        num_nodes: 节点数量
+        edges: 边的列表 [(u1, v1), (u2, v2), ...]
+
+    Returns:
+        labels: 每个节点的标签数组
+    """
+    # 建图（邻接表表示）
+    graph = {i: [] for i in range(num_nodes)}
+    for u, v in edges:
+        graph[u].append(v)
+        graph[v].append(u)
+    
+    # 初始化
+    visited = np.zeros(num_nodes, dtype=bool)  # 访问标记
+    labels = np.full(num_nodes, -1)            # 染色情况
+    current_label = 0
+    
+    # 遍历所有节点
+    for node in range(num_nodes):
+        if not visited[node]:
+            bfs(graph, node, visited, labels, current_label)
+            current_label += 1
+    
+    return labels
 
 def get_seen_data(label, idx):
     N = label.shape[0]
