@@ -17,7 +17,7 @@ import json
 ######################################################
 def get_pc_path_list(pc_root_path, process_root_path, args):
     if args.dataset == "PartNetE":
-        select_category = ["KitchenPot"]
+        select_category = ['Bottle', 'Box', 'Bucket', 'Camera', 'Cart', 'Chair', 'Clock', 'CoffeeMachine', 'Dishwasher', 'Dispenser', 'Display', 'Door', 'Eyeglasses', 'Faucet', 'FoldingChair', 'Globe', 'Kettle', 'Keyboard', 'KitchenPot', 'Knife', 'Lamp', 'Laptop', 'Lighter', 'Microwave', 'Mouse', 'Oven', 'Pen', 'Phone', 'Pliers', 'Printer', 'Refrigerator', 'Remote', 'Safe', 'Scissors', 'Stapler', 'Suitcase', 'Switch', 'Table', 'Toaster', 'Toilet', 'TrashCan', 'USB', 'WashingMachine', 'Window', 'StorageFurniture']
         splits = ["few_shot","test"]
         pc_path_list = []
         save_path_list = []
