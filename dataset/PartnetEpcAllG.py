@@ -375,12 +375,12 @@ class PartnetEpc(Dataset):
         super().__init__()
         self.split = split
         self.category = category
-        self.data_path = DATA_PATH[self.split]
+        self.data_path = args.preprocess_root_path
         self.show_figure = show_figure
         self.tsne=tsne
         self.shot = args.shot
         
-        partnete_meta = json.load(open(os.path.join(self.data_path,"PartNetE_meta.json")))
+        partnete_meta = json.load(open(os.path.join("./json/PartNetE_meta.json")))
         self.num_label = len(partnete_meta[category]) + 1
         
         self.use_cache = args.use_cache
