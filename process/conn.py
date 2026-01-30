@@ -8,6 +8,21 @@ from tqdm import tqdm
 from src.utils import get_seg_color,get_batchlabel_color
 import cv2
 import h5py
+from collections import deque
+
+def bfs(graph, start, visited, labels, current_label):
+    """ 执行BFS遍历并对连通块染色 """
+    queue = deque([start])
+    visited[start] = True
+    labels[start] = current_label
+    
+    while queue:
+        node = queue.popleft()
+        for neighbor in graph[node]:
+            if not visited[neighbor]:
+                visited[neighbor] = True
+                labels[neighbor] = current_label
+                queue.append(neighbor)
 
 def connected_components_bfs(num_nodes, edges):
     """
